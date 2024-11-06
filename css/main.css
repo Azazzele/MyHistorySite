@@ -1,7 +1,6 @@
 
 html {
     margin: 0 auto;
-    
     height: 100vh;
     width: 100%;
     top: 0;
@@ -12,13 +11,14 @@ html {
     color:white;
     list-style-type: none;
 }
-
+i{
+    margin-right: 10px;
+}
 body{
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--black__One);
-    overflow: hidden;
 }
 .filter{
     display: block;
@@ -34,19 +34,28 @@ body{
 }
 header{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     max-height: 100vh;
     min-height: 100vh;
 }
 .navigate{
-    position: sticky;
-    width: 350px;
+    position: relative;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 1rem;
 }
 .list{
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: 1em;
+    transition: transform 0.7s ease-out, opacity 0.7s ease-out; 
+    transform: translateX(-100%);
+    opacity: 0;
+    
+}
+.active{
+    transform: translateX(0); 
+    opacity: 1;  
 }
 .list_ul{
     color: aliceblue;
@@ -56,10 +65,11 @@ header{
     text-align: center;
     font-size: 20px;
     width: 300px;
+    transition: 0.4s;
 }
 .list_ul:hover{
     background-color: #212121;
-    transition: 0.4s;
+    
 }
 .list_ul:last-child{
     margin-bottom: 0;
@@ -67,45 +77,35 @@ header{
 .main{
     position: relative;
     display: flex;
+    padding: 1rem;
     flex-direction: column;
-    width: 550px;
-    height: 100%;
-    margin-top: 5%;
-    right: 5%;
-    top:0%; 
-    justify-content:center;
+    justify-content:space-evenly;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
-.header_main h1{
-    margin: 10px;
-    text-align: center;
-    font-size: 30px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background: linear-gradient(15deg, #7d6c8f 33%, #7467c0 66%, #8063ff);
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.text_note_block{
+    display: flex;
+ flex-direction: column;
+
 }
 .link_navigate{
+    display: flex;
+    align-items: center;
     color: aliceblue;
-    padding: 1em;
 }
 .info{
-    position: absolute;
-    height: 120px;
-    width: 600px;
-    margin-top: 40%;
+    display: flex;
+    height: 90px;
     text-align: center;
+    align-items: center;
+    justify-content: center;
     border: 5px dotted white;
-    border-radius: 15px;
-    right:13%;
+    border-radius: 15px; 
 }
 .info > span{
     font-size: 29px;
     letter-spacing: 4px;
 }
-
 .text{
-    border: 5px solid;
     padding: 3%;
     width: 100%;
     font-family: "Roboto",sans-serif,monospace;
@@ -115,52 +115,180 @@ header{
     -webkit-text-fill-color: transparent;
     background-clip: text;
     border-radius: 10px;
-    filter:opacity(0);
     transition: 0.6s; 
 }
 .entry{
-    display: inline-block;
-    width: 100%;
+    display: block;
+    width: auto;
     text-align: center;
     text-decoration: line-through;
     text-transform: uppercase;
     margin-top: 20px;
+    border: 1pt solid;
+    padding: 1rem;
+    color: #ec2752;
+    transition: .4s;
+    border-radius: 5px;
+   
 }
-.block__text{
+.entry:hover{
+    background-color: #e435352a;
+    border-radius: 25px;
+}
+.block__text {
     min-height: 100vh;
-    font-size: 16px;
-    text-transform: uppercase;
-    margin: 100px 180px;
+    font-size: 32px; /* Увеличим размер шрифта для лучшей читаемости */
+    line-height: 1.6; /* Межстрочное расстояние для лучшего восприятия текста */
+    text-align: justify; /* Текст выравниваем по ширине */
+    margin: 80px 100px; /* Отступы, чтобы текст не был прижат к краям */
+    color: #333; /* Цвет текста для лучшей контрастности */
 }
-.block__text > p{
-    padding: 1%;
+
+.block__text > p {
+    padding: 15px 0; /* Отступы для абзацев */
+    text-indent: 30px; /* Отступ первой строки абзаца */
 }
-.link__behind{
-    margin: 10px;
-    display: block;
+.btn_b{
+    text-align: center;
+}
+.link__behind {
+    margin: 20px auto;
+    display: inline-block;
     text-align: center;
     color: #ec2752;
-}
-.main::after{
-    content: 'Запись №000А1 "В этот день мы ппроснултсь в новом мире"';
-    
-    position: absolute;
-    top: 45%;
-    text-align: center;
-
-    left: 05%;
-    color: #ffffff;
-    z-index: 100;
-    font-family: "Roboto",sans-serif,monospace;
-    letter-spacing: 9px;
-    font-size: 30px;
+    font-size: 20px; /* Размер шрифта для ссылки */
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #ec2752;
+    border-radius: 30px;
+    transition: all 0.3s ease; /* Анимация для плавных переходов */
 }
 
-.main:hover:after{
-    display: none;
-    transition: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+.link__behind:hover {
+    background-color: #ec2752;
+    color: white; /* Изменение цвета текста при наведении */
+    transform: translateY(-5px); /* Легкий подъем при наведении */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+}
+.link__behind:active {
+    transform: translateY(2px); 
 }
 .text:hover{
     filter: none;
     transition: 0.6s;
+}
+.burger-btn {
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+/* Заголовок */
+.titleh {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Контейнер для всех заголовков */
+#titles {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);  /* Два столбца равной ширины */
+    gap: 50%;  /* Промежуток между элементами */
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Стиль для каждого элемента хронологии */
+.data {
+    opacity: 0; /* Начальное состояние (невидимы) */
+    transform: translateY(20px); /* Смещение вниз, чтобы элементы "выезжали" */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Плавная анимация */
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Выравнивание элементов по оси Y */
+    font-size: 25px;
+    padding: 1em;
+}
+/* Когда элемент добавляется, он будет анимироваться */
+.data.show {
+    opacity: 1; /* Элемент становится видимым */
+    transform: translateY(0); /* Возвращаем в исходное положение */
+}
+
+/* Вертикальная линия */
+.line_m {
+    width: 2px;
+    height: 80vh;  /* Установлена фиксированная высота для вертикальной линии */
+    border: 1px dashed white;
+    background-color: aliceblue;
+    border-radius: 25px;
+}
+
+/* Контейнер для года с вертикальной линией */
+.line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    justify-content: center;
+}
+
+/* Кнопка "Назад" */
+.back-button {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #e90e32;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color .8s ease;
+    border-radius: 10px;
+}
+.back-button:hover {
+    background-color: #ff000075;
+}
+.link_cr{
+    margin: 1em;
+}
+/* Стили для блока данных */
+.data {
+    display: flex;
+    align-items: start; /* Выравнивание по вертикали */
+    margin: 20px 0;
+    padding: 10px;
+    justify-content: flex-start; /* Размещение по горизонтали */
+}
+
+/* Стили для года */
+.year {
+    font-size: 24px;
+    margin-right: 20px; /* Отступ между годом и линией */
+}
+
+/* Вертикальная линия */
+.line {
+    width: 1px;
+    height: 100vh; /* Высота линии, можно регулировать */
+    background-color: #ffffff; /* Цвет линии */
+    margin: 0 20px; /* Отступы слева и справа */
+}
+
+/* Стили для текста */
+.year-text {
+    font-size: 20px;
+    text-align: left; /* Выравнивание текста */
+    max-width: 300px;
+    font-weight: 700;
+    color: #ffffff;
 }

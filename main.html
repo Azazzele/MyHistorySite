@@ -5,41 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <title>Главная</title>
 </head>
-<body>
-    <div class="filter"></div>
-    <header id="link_behinde">
-        <nav class="navigate">
-            <ul class="list">
-                <li class="list_ul"><a href="" class="link_navigate">Главная</a></li>
-                <li class="list_ul"><a href="chronical.html" class="link_navigate">Хронология событий</a></li>
-                <li class="list_ul"><a href="" class="link_navigate">Истории</a></li>
-                <li class="list_ul"><a href="" class="link_navigate">Записки</a></li>
-                <li class="list_ul"><a href="" class="link_navigate">Справочник</a></li>
-                <li class="list_ul"><a href="" class="link_navigate">Помощь</a></li>
-                
-            </ul>
-            <span>*Хронологии будет добавляться каждые ~ 2 недели. Истории каждые ~ 3 недели</span>
-        </nav>
-        <div class="info">
-            <span><- История борьбы человечства за свое существование -></span>
+<div class="filter"></div>
+<header id="link_behinde">
+   
+    <nav class="navigate">
+            <!-- Кнопка-бургер -->
+        <button id="burger_menu" class="burger-btn">
+            &#9776; <!-- Символ для бургер-меню -->
+        </button>
+        <ul class="list" id="list">
+            <li class="list_ul"><a href="" class="link_navigate"><i class="fas fa-home"></i> Главная</a></li>
+            <li class="list_ul"><a href="chronical.html" class="link_navigate"><i class="fas fa-clock"></i> Хронология событий</a></li>
+            <li class="list_ul"><a href="" class="link_navigate"><i class="fas fa-book"></i> Истории</a></li>
+            <li class="list_ul"><a href="" class="link_navigate"><i class="fas fa-edit"></i> Записки</a></li>
+            <li class="list_ul"><a href="" class="link_navigate"><i class="fas fa-bookmark"></i> Справочник</a></li>
+            <li class="list_ul"><a href="" class="link_navigate"><i class="fas fa-question-circle"></i> Помощь</a></li>
+        </ul>
+    </nav>
+    <div class="main">
+        <h2 class="header_note">Запись №00А1 "В этот день мы проснулись в новом мире"</h2>
+        <div class="text_note_block">
+            <p class="text">Это случилось внезапно. Они появились так внезапно, что мы думали, что это лишь мимолетное виденье, но это оказалась правда...
+            <a  class="entry" href="#link__up"> <--- Продолжение ---></a>
+        </p>
         </div>
-
-
-        <div class="main">
-            <div class="header_main">
-                <h1>След Раздирающий Тьму</h1>
-            </div>
-            <p class="text">Это случилось внезапно. Они появились так внекзапно,
-                что мы думали что это лишь мимолетное виденье, но это оказалась правда
-                В тот день мы по другому взглянули на свою жизнь и взгляд на понимания,
-                что мы что-то сделали не так в этой жизни. Да помолимся всем известным нам Богам что-бы они защитили нас.
-                <a  class="entry" href="#link__up"> <--- Продолжение ---></a>
-            </p>
-
-        </div>     
-    </header>
+        
+        <div class="info">
+            <span><- История борьбы человечества за свое существование -></span>
+        </div>
+    </div>     
+</header>
        <div id ='link__up'class="block__text">
         <p>Хоть время очень непростое. Мы живем в эпоху быстрых изменений, когда каждое новое утро приносит с собой неизвестность.</p>
         <p>Мир переживает экологические кризисы, политические конфликты и экономические колебания. Люди сталкиваются с вызовами, которые кажутся неподъемными, и испытывают постоянное напряжение. Каждый из нас пытается разобраться в сложностях жизни, пытается найти свое место в этом многоголосом мире.
@@ -61,8 +60,13 @@
         <p>Истории этих людей — это не просто факты или события. Это живые свидетельства, наполненные эмоциями, мечтами, надеждами и страхами.</p>
         <p>*Все песонажи, события, даты вымышленные.</p>
         <p>Приятоного прочтения </p>
-        <a href="#link_behinde" class="link__behind">Назад</a>
+        <div class="btn_b">
+            <a href="#link_behinde" class="link__behind">Назад</a>
+        </div>
+        
        </div> 
+       <script src="./scripts/index.js"></script>
 </body>
-</html>
 
+</samp>
+</html>
